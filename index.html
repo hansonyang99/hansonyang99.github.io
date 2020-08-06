@@ -178,13 +178,63 @@
 
 
 <hr>
-<h2 id="7、初始化"><a href="#7、初始化" class="headerlink" title="7、初始化"></a>7、初始化</h2><p>搭建成功后我们需要对其进行初始化，点击页面右上角的注册或者登录，会跳转到配置页面</p>
+<h2 id="7、建立网站（本地搭建，请跳过）"><a href="#7、建立网站（本地搭建，请跳过）" class="headerlink" title="7、建立网站（本地搭建，请跳过）"></a>7、建立网站（本地搭建，请跳过）</h2><p>在宝塔面板内创建一个网站，域名需要自己去阿里云的云解析DNS内解析一个二级域名即可。（有域名和服务器的情况）</p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806140009758.png" alt="image-20200806140009758"></p>
+<p>按照设置创建</p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806140331892.png" alt="image-20200806140331892"></p>
+<hr>
+<h2 id="8、初始化"><a href="#8、初始化" class="headerlink" title="8、初始化"></a>8、初始化</h2><p>搭建成功后我们需要对其进行初始化，点击页面右上角的注册或者登录，会跳转到配置页面</p>
 <p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806112827036.png" alt="image-20200806112827036"></p>
+<p><strong>数据库设置：</strong></p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806122716213.png" alt="image-20200806122716213"></p>
+<p><strong>一般设置：</strong></p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806140538869.png" alt="image-20200806140538869"></p>
+<p><strong>可选设置：</strong>（根据需求自定义）</p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806135717390.png" alt="image-20200806135717390"></p>
+<p>（管理员如果不设置，则第一个注册的用户就是管理员）</p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806140601173.png" alt="image-20200806140601173"></p>
+<p>安装好后会需要重新输入http:// ip地址:3000 到仓库页面</p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806141537636.png" alt="image-20200806141537636"></p>
+<hr>
+<h2 id="9、测试邮件功能"><a href="#9、测试邮件功能" class="headerlink" title="9、测试邮件功能"></a>9、测试邮件功能</h2><p>若要使用 Gitea 的内置电子邮件支持，请更新配置文件 [邮件] 部分：<code>app.ini</code></p>
+<p>首先，登录管理员账号，点击头像进入管理后台</p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806144125229.png" alt="image-20200806144125229"></p>
+<p>选择应用配置，向下拉，找到邮件配置：</p>
+<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806144236112.png" alt="image-20200806144236112"></p>
+<p>输入一个邮箱，发送测试邮件。如果测试不通过，则需修改app.ini内的内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/git/gitea/custom/conf/app.ini</span><br></pre></td></tr></table></figure>
 
+<h3 id="修改以下内容："><a href="#修改以下内容：" class="headerlink" title="修改以下内容："></a>修改以下内容：</h3><h4 id="发送邮件版本"><a href="#发送邮件版本" class="headerlink" title="发送邮件版本"></a>发送邮件版本</h4><ul>
+<li>使用操作系统的 sendmail 命令而不是 SMTP。这在 Linux 服务器上很常见。<br>注意：对于官方的 Gitea Docker 映像，请使用 SMTP 版本进行配置。</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mailer]</span></span><br><span class="line"><span class="comment"># 是否启用邮件服务</span></span><br><span class="line"><span class="attr">ENABLED</span>       = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 邮件发送地址</span></span><br><span class="line"><span class="attr">FROM</span>          = gitea@mydomain.com</span><br><span class="line"><span class="comment"># 邮件类型</span></span><br><span class="line"><span class="attr">MAILER_TYPE</span>   = sendmail</span><br><span class="line"><span class="comment"># 发送邮件存放路径</span></span><br><span class="line"><span class="attr">SENDMAIL_PATH</span> = /usr/sbin/sendmail</span><br></pre></td></tr></table></figure>
+
+<h4 id="SMTP-版本"><a href="#SMTP-版本" class="headerlink" title="SMTP 版本"></a>SMTP 版本</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mailer]</span></span><br><span class="line"><span class="comment"># 是否启用邮件服务</span></span><br><span class="line"><span class="attr">ENABLED</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 邮件发送地址，RFC 5322. 这里可以填一个邮件地址或者 “Name” email@example.com 格式。</span></span><br><span class="line"><span class="attr">FROM</span>    = email@example.com</span><br><span class="line"><span class="comment"># SMTP 主机地址和端口 (例如：smtp.gitea.io:587)</span></span><br><span class="line"><span class="comment"># SMTPS 连接（通过默认端口 465 传输层安全性的 SMTP）。</span></span><br><span class="line"><span class="attr">HOST</span>    = smtp.example.com:<span class="number">587</span></span><br><span class="line"><span class="comment"># 强制 SMTPS 连接 。</span></span><br><span class="line"><span class="attr">IS_TLS_ENABLED</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 用户名(通常就是邮件地址)。</span></span><br><span class="line"><span class="attr">USER</span>    = email@example.com</span><br><span class="line"><span class="comment"># 密码</span></span><br><span class="line"><span class="attr">PASSWD</span>  = PASSWORD</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重新启动 Gitea，使配置更改生效。</li>
+<li>要发送测试电子邮件以验证设置，请转到 Gitea &gt; 站点管理 &gt; 配置 &gt; SMTP 邮件配置。</li>
+</ul>
+<p>有关选项的完整列表，请查看<a target="_blank" rel="noopener" href="https://docs.gitea.io/en-us/config-cheat-sheet/">配置备忘单</a></p>
+<ul>
+<li><p>请注意：仅在使用 TLS 或 加密 SMTP 服务器通信时，才支持身份验证。TLS 加密可以通过：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOST&#x3D;localhost</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过支持 TLS 的服务器通过 STARTTLS - 通常在端口 587 上提供。（也称为机会 TLS。</li>
+<li>SMTPS 连接（通过默认端口 465 传输层安全性的 SMTP）。</li>
+<li>强制 SMTPS 连接 。（这两个都称为隐式 TLS。<code>IS_TLS_ENABLED=true</code></li>
+</ul>
+</li>
+<li><p>这是因为 Go 内部库对 STRIPTLS 攻击施加了保护。</p>
+</li>
+</ul>
+<h3 id="Gmail"><a href="#Gmail" class="headerlink" title="Gmail"></a>Gmail</h3><p>以下配置应与 GMail 的 SMTP 服务器一起使用：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mailer]</span></span><br><span class="line"><span class="comment"># 是否启用邮件服务</span></span><br><span class="line"><span class="attr">ENABLED</span>        = <span class="literal">true</span></span><br><span class="line"><span class="comment"># SMTP 主机地址和端口 </span></span><br><span class="line"><span class="attr">HOST</span>           = smtp.gmail.com:<span class="number">465</span></span><br><span class="line"><span class="comment"># 邮件发送地址</span></span><br><span class="line"><span class="attr">FROM</span>           = example@gmail.com</span><br><span class="line"><span class="comment"># 用户名(通常就是邮件地址)。</span></span><br><span class="line"><span class="attr">USER</span>           = example@gmail.com</span><br><span class="line"><span class="comment"># 密码</span></span><br><span class="line"><span class="attr">PASSWD</span>         = ***</span><br><span class="line"><span class="comment"># 邮件类型</span></span><br><span class="line"><span class="attr">MAILER_TYPE</span>    = smtp</span><br><span class="line"><span class="comment"># 强制 SMTPS 连接 。</span></span><br><span class="line"><span class="attr">IS_TLS_ENABLED</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 自定义主机名来回应 HELO 命令。</span></span><br><span class="line"><span class="attr">HELO_HOSTNAME</span>  = example.com</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/%E5%9F%BA%E4%BA%8ECentOS-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E4%BA%91/" data-id="ckdi8uwuq00011o61czwa50p1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/06/%E5%9F%BA%E4%BA%8ECentOS-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E4%BA%91/" data-id="ckdiihljf00014w611nqi85fv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/hello-world/" data-id="ckdi8uwud00001o614is17v88" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/06/hello-world/" data-id="ckdiihljb00004w61dcwu672v" class="article-share-link">Share</a>
       
       
     </footer>
