@@ -5,15 +5,42 @@
   
 
   
-  <title>Hexo</title>
+  <title>CentOS7安装Nginx | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="相关内容参考Tomcat安装教程参考 1、下载Nginx点击 Nainx下载链接在官网下载Nginx。  将下载好的Nginx使用远程软件，复制一份到linux系统中。  目录自己确定好，一会要用，不能忘记了。  2、安装Nginx需要的一些依赖安装Nginx还需要安装其他的一些依赖： 使用指令下载pcre： 1wget http:&#x2F;&#x2F;download.sourceforge.net&#x2F;projec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS7安装Nginx">
+<meta property="og:url" content="http://yoursite.com/2020/08/07/CentOS7%E5%AE%89%E8%A3%85Nginx/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="相关内容参考Tomcat安装教程参考 1、下载Nginx点击 Nainx下载链接在官网下载Nginx。  将下载好的Nginx使用远程软件，复制一份到linux系统中。  目录自己确定好，一会要用，不能忘记了。  2、安装Nginx需要的一些依赖安装Nginx还需要安装其他的一些依赖： 使用指令下载pcre： 1wget http:&#x2F;&#x2F;download.sourceforge.net&#x2F;projec">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807135801521.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807135948472.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807141055479.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807141300990.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807141503893.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807141604366.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807141720295.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807142053798.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807142407033.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807142709442.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807143059169.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807143245764.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807143353708.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807143547417.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807143652055.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807144015753.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807172809583.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807180157876.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807180432669.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807181104380.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807181557945.png">
+<meta property="og:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807175548071.png">
+<meta property="article:published_time" content="2020-08-07T05:54:44.000Z">
+<meta property="article:modified_time" content="2020-08-07T10:16:00.179Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/Yz/AppData/Roaming/Typora/typora-user-images/image-20200807135801521.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -62,9 +89,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-CentOS7安装Nginx" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-CentOS7安装Nginx" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/08/07/CentOS7%E5%AE%89%E8%A3%85Nginx/" class="article-date">
   <time datetime="2020-08-07T05:54:44.000Z" itemprop="datePublished">2020-08-07</time>
@@ -77,8 +102,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/07/CentOS7%E5%AE%89%E8%A3%85Nginx/">CentOS7安装Nginx</a>
+    <h1 class="article-title" itemprop="name">
+      CentOS7安装Nginx
     </h1>
   
 
@@ -297,240 +322,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-基于CentOS-7服务器搭建私人代码托管云" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/%E5%9F%BA%E4%BA%8ECentOS-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E4%BA%91/" class="article-date">
-  <time datetime="2020-08-06T02:26:58.000Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/06/%E5%9F%BA%E4%BA%8ECentOS-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E4%BA%91/">基于CentOS_7服务器搭建私人代码托管云</a>
-    </h1>
+    <a href="/2020/08/06/%E5%9F%BA%E4%BA%8ECentOS-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E4%BA%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">基于CentOS_7服务器搭建私人代码托管云</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、安装MySQL-Mariadb-数据库"><a href="#1、安装MySQL-Mariadb-数据库" class="headerlink" title="1、安装MySQL / Mariadb 数据库"></a>1、安装MySQL / Mariadb 数据库</h2><p>简易安装可采用宝塔可视化服务器面板进行安装。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Centos系统</span></span><br><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; sh install.sh</span><br></pre></td></tr></table></figure>
-
-
-
-<p>安装完成后，安装MySQL，至少<strong>5.7</strong>版本。</p>
-<hr>
-<h2 id="2、安装Git"><a href="#2、安装Git" class="headerlink" title="2、安装Git"></a>2、安装Git</h2><p>先查看下内置的git版本，是否达到最新gitea的git版本要求。然后觉得是否升级。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> CentOS系统</span></span><br><span class="line">yum -y install git</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806103225031.png" alt="image-20200806103225031"></p>
-<hr>
-<h2 id="3、安装Gitea"><a href="#3、安装Gitea" class="headerlink" title="3、安装Gitea"></a>3、安装Gitea</h2><p><strong>创建目录：</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /home/git/gitea /var/log/gitea</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806103439970.png" alt="image-20200806103439970"></p>
-<p><strong>获取Gitea安装文件：</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.gitea.io/gitea/1.6.0-rc1/gitea-1.6.0-rc1-linux-amd64  -O /home/git/gitea/gitea</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806103558602.png" alt="image-20200806103558602"></p>
-<p><strong>添加执行权限：</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /home/git/gitea/gitea</span><br></pre></td></tr></table></figure>
-
-<p>修改所有人</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R root:root /home/git/gitea /var/log/gitea</span><br></pre></td></tr></table></figure>
-
-<p>修改所有人</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R root:root /home/git/gitea /var/log/gitea</span><br></pre></td></tr></table></figure>
-
-<p>运行项目</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gitea web</span><br></pre></td></tr></table></figure>
-
-<p>接下来打开http://服务器ip地址:3000即可!</p>
-<h2 id="4、无法访问请看这！"><a href="#4、无法访问请看这！" class="headerlink" title="4、无法访问请看这！"></a>4、无法访问请看这！</h2><h3 id="1、进入ip-3000打不开网站"><a href="#1、进入ip-3000打不开网站" class="headerlink" title="1、进入ip:3000打不开网站"></a>1、进入ip:3000打不开网站</h3><p><strong>1）需要关闭防火墙！</strong></p>
-<p>CentOS 7：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
-
-<p><strong>2）打开对应的3000端口。</strong></p>
-<p>若安装了宝塔，也需要在宝塔安全菜单内打开3000端口。</p>
-<p><strong>宝塔：</strong></p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806104604860.png" alt="image-20200806104604860"></p>
-<p><strong>阿里云：</strong></p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806104706634.png" alt="image-20200806104706634"></p>
-<hr>
-<h2 id="5、使用服务来启动"><a href="#5、使用服务来启动" class="headerlink" title="5、使用服务来启动"></a><strong>5、使用服务来启动</strong></h2><p><strong>1）首先新建编辑下面这个文件</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/systemd/system/gitea.service</span><br></pre></td></tr></table></figure>
-
-<p><strong>2）输入下面配置文件</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Gitea (Git with a cup of tea)</span><br><span class="line">After=syslog.target</span><br><span class="line">After=network.target</span><br><span class="line">After=mysqld.service</span><br><span class="line"><span class="meta">#</span><span class="bash">After=postgresql.service</span></span><br><span class="line"><span class="meta">#</span><span class="bash">After=memcached.service</span></span><br><span class="line"><span class="meta">#</span><span class="bash">After=redis.service</span></span><br><span class="line"> </span><br><span class="line">[Service]</span><br><span class="line"><span class="meta">#</span><span class="bash"> Modify these two values and uncomment them <span class="keyword">if</span> you have</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> repos with lots of files and get an HTTP error 500 because</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> of that</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">LimitMEMLOCK=infinity</span></span><br><span class="line"><span class="meta">#</span><span class="bash">LimitNOFILE=65535</span></span><br><span class="line">RestartSec=2s</span><br><span class="line">Type=simple</span><br><span class="line">User=root</span><br><span class="line">Group=root</span><br><span class="line">WorkingDirectory=/home/git/gitea</span><br><span class="line">ExecStart=/home/git/gitea/gitea web</span><br><span class="line">Restart=always</span><br><span class="line">Environment=USER=git HOME=/home/git/gitea</span><br><span class="line"> </span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p><strong>3）执行</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 重载daemon，让新的服务文件生效：</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 现在就可以用systemctl来启动gitea了：</span></span><br><span class="line">sudo systemctl start gitea</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置开机启动：</span></span><br><span class="line">systemctl enable gitea</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 停止、查看状态可以用：</span></span><br><span class="line">systemctl stop gitea</span><br><span class="line"></span><br><span class="line">systemctl status gitea</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806105054249.png" alt="image-20200806105054249">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </p>
-<blockquote>
-<p>如果服务不能启动，你要注意的是下面几点（systemctl status giea查看服务状态，journalctl -b 0 -u gitea查看日志）</p>
-<p>首先你的gitea放的目录问题，因为使用git用户启动的服务，所以你的gitea所在目录肯定要让git用户有访问权限，所以root目录下是不可以的<br>之后上面的配置参数你也要按照自己的环境目录来写，不要复制粘贴了，After=mysqld.service表示在mysql服务启动之后再启动gitea服务，所以这个根据你的数据库来选择去掉哪个注释</p>
-</blockquote>
-<hr>
-<h2 id="6、服务操作相关命令"><a href="#6、服务操作相关命令" class="headerlink" title="6、服务操作相关命令"></a>6、服务操作相关命令</h2><p>查看服务列表与状态</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-units --type=service</span><br></pre></td></tr></table></figure>
-
-<p>启动一个服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start postfix.service</span><br></pre></td></tr></table></figure>
-
-<p>关闭一个服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop postfix.service</span><br></pre></td></tr></table></figure>
-
-<p>重启一个服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart postfix.service</span><br></pre></td></tr></table></figure>
-
-<p>显示一个服务的状态：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status postfix.service</span><br></pre></td></tr></table></figure>
-
-<p>在开机时启用一个服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable postfix.service</span><br></pre></td></tr></table></figure>
-
-<p>在开机时禁用一个服务：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable postfix.service</span><br></pre></td></tr></table></figure>
-
-<p>查看服务是否开机启动： </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl is-enabled postfix.service</span><br></pre></td></tr></table></figure>
-
-<p>查看已启动的服务列表： </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-unit-files | grep enabled</span><br></pre></td></tr></table></figure>
-
-<p>查看启动失败的服务列表：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl --failed</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h2 id="7、建立网站（本地搭建，请跳过）"><a href="#7、建立网站（本地搭建，请跳过）" class="headerlink" title="7、建立网站（本地搭建，请跳过）"></a>7、建立网站（本地搭建，请跳过）</h2><p>在宝塔面板内创建一个网站，域名需要自己去阿里云的云解析DNS内解析一个二级域名即可。（有域名和服务器的情况）</p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806140009758.png" alt="image-20200806140009758"></p>
-<p>按照设置创建</p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806140331892.png" alt="image-20200806140331892"></p>
-<hr>
-<h2 id="8、初始化"><a href="#8、初始化" class="headerlink" title="8、初始化"></a>8、初始化</h2><p>搭建成功后我们需要对其进行初始化，点击页面右上角的注册或者登录，会跳转到配置页面</p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806112827036.png" alt="image-20200806112827036"></p>
-<p><strong>数据库设置：</strong></p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806122716213.png" alt="image-20200806122716213"></p>
-<p><strong>一般设置：</strong></p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806140538869.png" alt="image-20200806140538869"></p>
-<p><strong>可选设置：</strong>（根据需求自定义）</p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806135717390.png" alt="image-20200806135717390"></p>
-<p>（管理员如果不设置，则第一个注册的用户就是管理员）</p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806140601173.png" alt="image-20200806140601173"></p>
-<p>安装好后会需要重新输入http:// ip地址:3000 到仓库页面</p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806141537636.png" alt="image-20200806141537636"></p>
-<hr>
-<h2 id="9、测试邮件功能"><a href="#9、测试邮件功能" class="headerlink" title="9、测试邮件功能"></a>9、测试邮件功能</h2><p>若要使用 Gitea 的内置电子邮件支持，请更新配置文件 [邮件] 部分：<code>app.ini</code></p>
-<p>首先，登录管理员账号，点击头像进入管理后台</p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806144125229.png" alt="image-20200806144125229"></p>
-<p>选择应用配置，向下拉，找到邮件配置：</p>
-<p><img src="C:\Users\Yz\AppData\Roaming\Typora\typora-user-images\image-20200806144236112.png" alt="image-20200806144236112"></p>
-<p>输入一个邮箱，发送测试邮件。如果测试不通过，则需修改app.ini内的内容：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/git/gitea/custom/conf/app.ini</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改以下内容："><a href="#修改以下内容：" class="headerlink" title="修改以下内容："></a>修改以下内容：</h3><h4 id="发送邮件版本"><a href="#发送邮件版本" class="headerlink" title="发送邮件版本"></a>发送邮件版本</h4><ul>
-<li>使用操作系统的 sendmail 命令而不是 SMTP。这在 Linux 服务器上很常见。<br>注意：对于官方的 Gitea Docker 映像，请使用 SMTP 版本进行配置。</li>
-</ul>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mailer]</span></span><br><span class="line"><span class="comment"># 是否启用邮件服务</span></span><br><span class="line"><span class="attr">ENABLED</span>       = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 邮件发送地址</span></span><br><span class="line"><span class="attr">FROM</span>          = gitea@mydomain.com</span><br><span class="line"><span class="comment"># 邮件类型</span></span><br><span class="line"><span class="attr">MAILER_TYPE</span>   = sendmail</span><br><span class="line"><span class="comment"># 发送邮件存放路径</span></span><br><span class="line"><span class="attr">SENDMAIL_PATH</span> = /usr/sbin/sendmail</span><br></pre></td></tr></table></figure>
-
-<h4 id="SMTP-版本"><a href="#SMTP-版本" class="headerlink" title="SMTP 版本"></a>SMTP 版本</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mailer]</span></span><br><span class="line"><span class="comment"># 是否启用邮件服务</span></span><br><span class="line"><span class="attr">ENABLED</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 邮件发送地址，RFC 5322. 这里可以填一个邮件地址或者 “Name” email@example.com 格式。</span></span><br><span class="line"><span class="attr">FROM</span>    = email@example.com</span><br><span class="line"><span class="comment"># SMTP 主机地址和端口 (例如：smtp.gitea.io:587)</span></span><br><span class="line"><span class="comment"># SMTPS 连接（通过默认端口 465 传输层安全性的 SMTP）。</span></span><br><span class="line"><span class="attr">HOST</span>    = smtp.example.com:<span class="number">587</span></span><br><span class="line"><span class="comment"># 强制 SMTPS 连接 。</span></span><br><span class="line"><span class="attr">IS_TLS_ENABLED</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 用户名(通常就是邮件地址)。</span></span><br><span class="line"><span class="attr">USER</span>    = email@example.com</span><br><span class="line"><span class="comment"># 密码</span></span><br><span class="line"><span class="attr">PASSWD</span>  = PASSWORD</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>重新启动 Gitea，使配置更改生效。</li>
-<li>要发送测试电子邮件以验证设置，请转到 Gitea &gt; 站点管理 &gt; 配置 &gt; SMTP 邮件配置。</li>
-</ul>
-<p>有关选项的完整列表，请查看<a target="_blank" rel="noopener" href="https://docs.gitea.io/en-us/config-cheat-sheet/">配置备忘单</a></p>
-<ul>
-<li><p>请注意：仅在使用 TLS 或 加密 SMTP 服务器通信时，才支持身份验证。TLS 加密可以通过：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOST&#x3D;localhost</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>通过支持 TLS 的服务器通过 STARTTLS - 通常在端口 587 上提供。（也称为机会 TLS。</li>
-<li>SMTPS 连接（通过默认端口 465 传输层安全性的 SMTP）。</li>
-<li>强制 SMTPS 连接 。（这两个都称为隐式 TLS。<code>IS_TLS_ENABLED=true</code></li>
-</ul>
-</li>
-<li><p>这是因为 Go 内部库对 STRIPTLS 攻击施加了保护。</p>
-</li>
-</ul>
-<h3 id="Gmail"><a href="#Gmail" class="headerlink" title="Gmail"></a>Gmail</h3><p>以下配置应与 GMail 的 SMTP 服务器一起使用：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mailer]</span></span><br><span class="line"><span class="comment"># 是否启用邮件服务</span></span><br><span class="line"><span class="attr">ENABLED</span>        = <span class="literal">true</span></span><br><span class="line"><span class="comment"># SMTP 主机地址和端口 </span></span><br><span class="line"><span class="attr">HOST</span>           = smtp.gmail.com:<span class="number">465</span></span><br><span class="line"><span class="comment"># 邮件发送地址</span></span><br><span class="line"><span class="attr">FROM</span>           = example@gmail.com</span><br><span class="line"><span class="comment"># 用户名(通常就是邮件地址)。</span></span><br><span class="line"><span class="attr">USER</span>           = example@gmail.com</span><br><span class="line"><span class="comment"># 密码</span></span><br><span class="line"><span class="attr">PASSWD</span>         = ***</span><br><span class="line"><span class="comment"># 邮件类型</span></span><br><span class="line"><span class="attr">MAILER_TYPE</span>    = smtp</span><br><span class="line"><span class="comment"># 强制 SMTPS 连接 。</span></span><br><span class="line"><span class="attr">IS_TLS_ENABLED</span> = <span class="literal">true</span></span><br><span class="line"><span class="comment"># 自定义主机名来回应 HELO 命令。</span></span><br><span class="line"><span class="attr">HELO_HOSTNAME</span>  = example.com</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/%E5%9F%BA%E4%BA%8ECentOS-7%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%A7%81%E4%BA%BA%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E4%BA%91/" data-id="ckdk2qr560001fs61axcu25ui" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/06/hello-world/" class="article-date">
-  <time datetime="2020-08-06T01:43:08.422Z" itemprop="datePublished">2020-08-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/06/hello-world/" data-id="ckdk2qr580002fs6190l1ckdq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
